@@ -106,7 +106,7 @@ secureURL = 'https://secure.greenbits.com/reports/sales-by?column=account&interv
 
 
 chromeOptions = webdriver.ChromeOptions()
-chromeOptions.add_experimental_option('prefs',{"download.default_directory": "/Users/jakequinn/Desktop/PycharmProjects/WebScaper"})
+chromeOptions.add_experimental_option('prefs',{"download.default_directory": "/Users/jakequinn/Desktop/GitHub/Jamaica Joels Auto/Drops Auto Email"})
 
 driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()),
                           options=chromeOptions)
@@ -123,37 +123,40 @@ p_word.click()
 p_word.send_keys(PASSWORD)
 
 driver.find_element(By.CLASS_NAME, "btn-text").click()
-time.sleep(10)
+
 #driver.find_element(By.CLASS_NAME, "sr-only").click()
 
-driver.maximize_window()
+time.sleep(4)
 
 driver.find_element(By.LINK_TEXT, "Insights").click()
-time.sleep(5)
 
+time.sleep(4)
 
 
 driver.find_element(By.XPATH, '//*[@data-test-link="reorder_report_export"]').click()
-time.sleep(10)
+
+time.sleep(4)
 
 
 driver.find_element(By.LINK_TEXT, "Best Performing Discounts").click()
-time.sleep(10)
+
+time.sleep(4)
 
 driver.find_element(By.CLASS_NAME, "col-md-3").click()
 
-driver.find_element(By.XPATH, '//*[@value="today"]').click()
+time.sleep(4)
 
+driver.find_element(By.XPATH, '//*[@value="yesterday"]').click()
 
-time.sleep(10)
-
+time.sleep(4)
 
 driver.find_element(By.XPATH, '//*[@title="Update Report"]').click()
-time.sleep(10)
+
+time.sleep(4)
 
 driver.find_element(By.XPATH, '//*[@data-test-action="download_csv"]').click()
-time.sleep(10)
 
+time.sleep(10)
 
 emailpass = 'ovdj qzne lkdy phxo'
 email_sender = 'JamaicaJake27@gmail.com'
@@ -174,13 +177,13 @@ with open('best_performing_discounts.csv') as f:
 
 body = f"""
 JamaicaJake Auto Email test take 1
-Today the 15% Student discount gave out {voucher} $$$
+Yesterday, the 15% Student discount gave out {voucher} $$$
 """
 
 emailpass = 'ovdj qzne lkdy phxo'
 email_sender = 'JamaicaJake27@gmail.com'
 
-email_receiver = 'jakeq12345@icloud.com'
+email_receiver = 'dashboard@jamaicajoels.com'
 
 
 subject = "Testing email Automation"
